@@ -1,3 +1,77 @@
-// -----------------------------------------------------------------------------
-// This file contains very basic styles.
-// -----------------------------------------------------------------------------
+/**
+ * Basic Styling Rules
+ * ===================
+ * I'm really not sure what will live in this file. For the time being, basic
+ * styling and additional resets will be add here, and moved to other files as
+ * the CSS matures.
+ *NB. If you've ever wonder what expensive CSS rules look like, look no further.
+ *    This file will likely be more willing to sacrifice readability for efficiency in the name of reducing the number and scope of keykey
+ */
+
+
+* {
+  position : relative;
+}
+
+body {
+  @extend %serif;
+}
+
+
+
+::selection {
+  color      : $white;
+  background : $orange-lighter;
+}
+
+
+
+a {
+  color : $orange-text-light;
+
+  &:hover {
+    color           : $cyan-dark;
+    text-decoration : none;
+  }
+  &:focus {
+    color           : $cyan;
+    text-decoration : none;
+  }
+}
+
+
+
+h1 { @extend %OpenSans-Light;
+     color       : $gray;
+     line-height : 1.2;
+     font-size   : 2.85rem; }
+h2 { @extend %sans;
+     color       : $gray;
+     line-height : 1.2;
+     font-size   : 2.00rem; }
+h3 { @extend %sans;
+     color       : $gray;
+     line-height : 1.2;
+     font-size   : 1.75rem; }
+h4 { @extend %sans-bold;
+     color       : $gray;
+     line-height : 1.2;
+     font-size   : 1.25rem; }
+h5 { @extend %sans-bold;
+     color       : $gray;
+     line-height : 1.2;
+     font-size   : 0.90rem; }
+h6 { @extend %sans-bold;
+     color       : $gray;
+     line-height : 1.2;
+     font-size   : 0.75rem; }
+
+h1, h2, h3, h4, h5, h6 {
+  z-index : -10;
+  a {
+    color : $gray;
+    //TODO: Decide if we want header hovers to be orange or cyan-dark?
+    &:hover { color : $orange; }
+    &:focus { color : $cyan; }
+  }
+}
